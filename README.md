@@ -119,7 +119,8 @@ centos2の **/var/www/html** の所有者とグループを **t-user** に変更
 centos01で以下の要件でcronを設定
  - 実行ユーザーは **t-user**
  - **1分** ごとに実行
- - 手順11で作成したシェルスクリプトの標準出力を **centos2** の **/var/www/html/index.html** へ上書き出力する
+ - 手順11で作成したシェルスクリプトの標準出力を **/home/t-user/index.html** へ上書き出力する
+ - 出力された/home/t-user/index.htmlを **centos02** の **/html/www/html/index.html** へコピーする
 
 ## 14. Web画面を確認
-centos02のウェブ画面を確認する
+centos02のウェブ画面をブラウザから確認する
