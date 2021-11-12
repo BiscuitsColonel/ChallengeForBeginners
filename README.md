@@ -97,10 +97,12 @@ CentOSのインストール用ISOイメージをダウンロードする。
 要件は以下です。
  - centos01のt-userからcentos02のt-userへ鍵認証のSSHをできるようにしたい
  - キーペアの作成はどちらのVMでもよい
+ - centos01のt-userからcentos02のt-userへIPAddressを指定してSSHできることを確認する
 
 ## 11. シェルスクリプトの作成
-centos01で以下の要件でシェルスクリプトを作成する。
- - ファイル名とパスは **/home/t-user/bin/test.sh** とする
+centos02で以下の要件でシェルスクリプトを作成する。
+ - **/home/t-user/bin** ディレクトリを作成
+ - パスは **/home/t-user/bin** , ファイル名は **test.sh** とする
  - パーミッションは **755** とする
  - ホスト名と現在時刻(フォーマットは問わない)を標準出力するものを作成
 
@@ -116,11 +118,10 @@ centos02でApacheを起動する。
 centos2の **/var/www/html** の所有者とグループを **t-user** に変更する。
 
 ## 13. シェルスクリプトの定期実行
-centos01で以下の要件でcronを設定
+centos02で以下の要件でcronを設定
  - 実行ユーザーは **t-user**
  - **1分** ごとに実行
- - 手順11で作成したシェルスクリプトの標準出力を **/home/t-user/index.html** へ上書き出力する
- - 出力された/home/t-user/index.htmlを **centos02** の **/html/www/html/index.html** へコピーする
+ - 手順11で作成したシェルスクリプトの標準出力を **/html/www/html/index.html** へ上書き出力する
 
 ## 14. Web画面を確認
 centos02のウェブ画面をブラウザから確認する
