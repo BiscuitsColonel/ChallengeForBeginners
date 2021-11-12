@@ -95,7 +95,7 @@ CentOSのインストール用ISOイメージをダウンロードする。
 要件は以下です。
  - centos01のt-userからcentos02のt-userへ鍵認証のSSHをできるようにしたい
  - キーペアの作成はどちらのVMでもよい
- - centos01のt-userからcentos02のt-userへIPAddressを指定してSSHできることを確認する
+ - centos01のt-userからcentos02のt-userへIPアドレスを指定してSSHできることを確認する
 
 ## 11. シェルスクリプトの作成
 centos02で以下の要件でシェルスクリプトを作成する。
