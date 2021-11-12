@@ -1,6 +1,6 @@
 # Linux初心者向け課題
 ## 1. VirtualBoxのインストール
-VirtualBoxをOracleのページからダウンロードしてインストールしてください。  
+VirtualBoxをOracleのページからダウンロードしてインストールする。  
 特にバージョンは指定しないです。
 
 ## 2. VMの作成
