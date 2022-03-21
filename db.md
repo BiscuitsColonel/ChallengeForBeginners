@@ -10,7 +10,7 @@
 ## 前提
  - [Linux初心者向け課題](linux.md)で構築したcentos01とcentos02が存在していること。
 
-## 1. **centos01**にPostgreSQL14のインストールして起動する
+## 1. **centos01**にPostgreSQL14のインストールをして起動する
 以下の手順を実行する。
 1. PostgreSQL14のリポジトリを追加
 2. 以下のパッケージをインストール  
