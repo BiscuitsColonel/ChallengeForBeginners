@@ -1,4 +1,6 @@
 # Linux初心者向け課題
+Linuxをなんとなくで触れてみる。
+
 ## 学んでほしいこと
  - VirtualBox
  - Linuxとは
