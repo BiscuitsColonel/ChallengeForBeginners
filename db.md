@@ -107,7 +107,7 @@ id | name
 
 ## 12. **centos01**からtest.dumpを使用してpostgresデータベースをリストアする
 
-## 13. **centos02**からt-userでデータベースに再接続してuserテーブルを参照する
+## 13. **centos02**からt-userでデータベースに接続してuserテーブルを参照する
 参照結果が以下のような内容であることを確認する。
 
 id | name
