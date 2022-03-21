@@ -10,7 +10,8 @@
 
 ## メニュー
 
-[Linux初心者向け課題](linux.md)
+ - [Linux初心者向け課題](linux.md)
+ - [Webアプリ初心者向け課題](web.md)
 
 ### 追加予定
 
