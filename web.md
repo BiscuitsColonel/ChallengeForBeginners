@@ -75,7 +75,7 @@ public class SumController {
 Spring Bootアプリケーションとして起動する。
 
 ## 6. 確認
-### 1. ブラウザから「http://localhost:8080/100」として検索を実行した結果が以下の画像と一致するかを確認する。
+### 1. ブラウザから「http\://localhost:8080/100」で検索した結果が以下の画像と一致するかを確認する。
 ![hello_web](/img/hello_web.png) 
 
 ### 2. 以下のcurlコマンドで結果が以下と一致するかを確認する。
