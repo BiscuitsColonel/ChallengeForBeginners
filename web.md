@@ -5,7 +5,7 @@ Spring BootでJavaを用いてWebアプリを作ってみる。
  - IDEとは
  - Spring Bootとは
  - MVCモデルとは
- - java 
+ - Java 
 
 ## 1. IDEのインストール
 Spring Bootを簡単に扱えるおすすめのIDEは以下。　　
