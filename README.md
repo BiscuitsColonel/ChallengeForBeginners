@@ -18,7 +18,9 @@
 ### レベル3
  - [DBを使用したWebアプリ初心者向け課題](web_used_db.md)
 
-### 追加予定
-Docker初心者向け課題  
-AWS初心者向け課題
-DBを使用したWebアプリ作成課題
+### feature
+ - Docker  
+ - AWS
+   - CI/CD
+   - IaC
+   - 監視
