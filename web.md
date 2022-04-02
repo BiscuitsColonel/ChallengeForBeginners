@@ -2,9 +2,9 @@
 Spring BootでJavaを用いてWebアプリをなんとなく作ってみる。
 
 ## 学んでほしいこと
- - IDEとは
- - Spring Bootとは
- - MVCモデルとは
+ - IDE
+ - Spring Boot
+ - MVCモデル
  - Java 
  - アノテーション
  - HTML
