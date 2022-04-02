@@ -3,7 +3,7 @@ Linuxをなんとなくで触れてみる。
 
 ## 学んでほしいこと
  - VirtualBox
- - Linuxとは
+ - Linux
  - ディレクトリとファイル
  - 標準出力
  - SSH
