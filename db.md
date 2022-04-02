@@ -2,10 +2,10 @@
 代表的なRDBMSであるPostgreSQLを学んでみる。
 
 ## 学んでほしいこと
- - DB(RDBMS)とは
- - 一般的な運用SQL
+ - DB(RDBMS)
+ - 標準SQL
  - 設定ファイル
- - バックアップ・リストア
+ - バックアップとリストア
 
 ## 前提
  - [Linux初心者向け課題](linux.md)で構築したcentos01とcentos02が存在していること。
