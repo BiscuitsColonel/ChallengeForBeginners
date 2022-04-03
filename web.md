@@ -15,8 +15,8 @@ Spring Bootを簡単に扱えるおすすめのIDEは以下。　　
  - Eclipse
  - IntelliJ IDEA
 
-## 2. SpringBootの使用
-以下の要件でSpringBootのプロジェクトを作成する。
+## 2. Spring Bootの使用
+以下の要件でSpring Bootのプロジェクトを作成する。
  - Spring スターター・プロジェクトから作成
  - 名前: HelloWorldApp
  - タイプ: Gradle Project
