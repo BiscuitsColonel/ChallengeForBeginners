@@ -411,4 +411,42 @@ public class UserController {
 ```
 ## 9. Spring Bootのプロパティファイルの設定
 1. application.propertiesをapplication.ymlにリネームする
-2. 
+2. application.ymlに以下の設定をする。  
+  a. portは8080  
+  b. PostgreSQLの接続情報を環境変数でオーバーライドできる形で記入する  
+  c. アプリ側でコネクションプーリングは使わない  
+  d. SQLのログを取得する  
+  e. Mybatisはキャッシュを利用しない  
+  f. プリペアドを使い回す
+
+```
+# ウェブ
+server:
+  port: 8080
+
+# データベース 
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${DBHOST:localhost}:${DBPORT:5432}/${DBNAME:web}?serverTimezone=JST
+    username: ${DBUSER:t-user}
+    password: ${DBPASS:TestCentOS}
+    # コネクションプーリングしない
+    type: org.springframework.jdbc.datasource.DriverManagerDataSource
+
+# SQLのログをMapperから出力する
+logging:
+  level:
+    jp:
+      co:
+        web:
+         repository: DEBUG
+
+# Mybatisの設定
+mybatis:
+  configuration:
+    # キャッシュを使わない
+    cache-enabled: false
+    # PreparedStatementを使います
+    defaultExecutorType: REUSE
+```
