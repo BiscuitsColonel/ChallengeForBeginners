@@ -394,7 +394,7 @@ public class UserController {
 
   //編集データの保存
   @PostMapping("/edit/{id}")
-  public String update(UserDto dto, @PathVariable int id) {
+  public String update(UserDto dto, @PathVariable Integer id) {
     dto.setId(id);
     service.updateOne(dto);
     return "redirect:/sample";
@@ -402,7 +402,7 @@ public class UserController {
 
   //データの削除
   @PostMapping("/delete/{id}")
-  public String delete(@PathVariable int id) {
+  public String delete(@PathVariable Integer id) {
     service.deleteOne(id);
     return "redirect:/sample";
   }
