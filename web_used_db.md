@@ -18,6 +18,8 @@ DBを扱う理由とWebアプリの基本を学ぶ
    - 使用した依存関係について
  - データベース
    - アプリとの関係性
+   - 基本的な運用
+   - シーケンス
 
 ## 前提
  - [データベース初心者向け課題](db.md)と[Webアプリ初心者向け課題](web.md)を行っていること。
@@ -35,9 +37,9 @@ DBを扱う理由とWebアプリの基本を学ぶ
  - 依存関係: Spring Web, Spring Boot DevTools, Thymeleaf, Lombok, MyBatis Framework, PostgreSQL Driver
 
 ## 2. データベースを作成
-以下の要件でデータベースを作成する。
- - cent01のデータベースのpostgresユーザーでbaseballというデータベースを作成する
- - 
-
- - Spring Boot バージョン: 2.6.4yうーざー
- - Spring Boot バージョン: 2.6.4
+以下の要件でデータベースを作成する。  
+※ここで言うユーザーはデータベースユーザーを指すことに注意してください
+ - centos01のデータベースにpostgresユーザーでbaseballというデータベースを作成する
+ - postgresユーザーでid(int)(プライマリキー), name(text), age(int), team(text), position(text)のカラムを持つplayers_tblテーブルを作成する
+ - postgresユーザーでplayers_seqシーケンスを作成する
+ - postgresユーザーでbaseballユーザーを作成する
