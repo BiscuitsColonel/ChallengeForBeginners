@@ -42,4 +42,6 @@ DBを扱う理由とWebアプリの基本を学ぶ
  - centos01のデータベースにpostgresユーザーでbaseballというデータベースを作成する
  - postgresユーザーでid(int)(プライマリキー), name(text), age(int), team(text), position(text)のカラムを持つplayers_tblテーブルを作成する
  - postgresユーザーでplayers_seqシーケンスを作成する
- - postgresユーザーでbaseballユーザーを作成する
+ - t-userにplayers_tblテーブルとplayers_seqシーケンスへ全ての操作権限を付与する
+
+## 3. Spring BootにDtoを作成する
