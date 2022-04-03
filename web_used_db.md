@@ -186,6 +186,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import jp.co.web.dto.UserDto;
 import jp.co.web.repository.UserMapper;
 
+@Service
 public class UserService {
 
   @Autowired
@@ -408,3 +409,6 @@ public class UserController {
   }
 }
 ```
+## 9. Spring Bootのプロパティファイルの設定
+1. application.propertiesをapplication.ymlにリネームする
+2. 
