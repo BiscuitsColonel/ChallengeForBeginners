@@ -34,7 +34,7 @@ DBを扱う理由とWebアプリの基本を学ぶ
  - 成果物: BaseBallApp
  - パッケージ: jp.co.baseball
  - Spring Boot バージョン: 2.6.4
- - 依存関係: Spring Web, Spring Boot DevTools, Thymeleaf, Lombok, MyBatis Framework, PostgreSQL Driver
+ - 依存関係: Spring Web, Spring Boot DevTools, Thymeleaf, Lombok, MyBatis Framework, PostgreSQL Driver, Validate
 
 ## 2. データベースを作成
 以下の要件でデータベースを作成する。  
@@ -46,4 +46,7 @@ DBを扱う理由とWebアプリの基本を学ぶ
 
 ## 3. Spring BootにDtoを作成する
 1. 「src/main/java/」配下にjp.co.baseball.dtoパッケージを作成する(パッケージは「/」を「.」と扱う)。
-2. 1で作成したパッケージ配下にPlayersDto.java(クラス)を以下の内容で作成する。
+2. 1で作成したパッケージ配下にPlayersDto.java(クラス)を以下の条件で作成する。  
+  a. ゲッターとセッターはlombokのアノテーションを使用する  
+  b. name(String), age(Integer), team(String), position(String)を定義する  
+  c. バリデーション用のアノテーションとして全てのNotNull
