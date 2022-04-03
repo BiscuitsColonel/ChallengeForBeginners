@@ -13,10 +13,10 @@
  - [Webアプリ初心者向け課題](web.md)
 
 ### レベル2
- - [DB初心者向け課題](db.md)
+ - [データベース初心者向け課題](db.md)
 
 ### レベル3
- - [DBを使用したWebアプリ初心者向け課題](web_used_db.md)
+ - [データベースを使用したWebアプリ初心者向け課題](web_used_db.md)
 
 ### feature
  - Docker  
