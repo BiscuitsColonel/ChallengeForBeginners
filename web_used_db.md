@@ -254,15 +254,15 @@ index.html
     <h2>一覧ページ</h2>
     <table>
         <tr><th>id</th><th>name</th><th>age</th></tr>
-        <tr th:each="test : ${testList}">
-            <td th:text="${test.id}"></td>
-            <td th:text="${test.name}"></td>
-            <td th:text="${test.age}"></td>
+        <tr th:each="dto : ${dtoList}">
+            <td th:text="${dto.id}"></td>
+            <td th:text="${dto.name}"></td>
+            <td th:text="${dto.age}"></td>
             <td>
-                <a href="#" th:href="@{'/sample/edit/' + ${test.id}}"><button>編集</button></a>
+                <a href="#" th:href="@{'/sample/edit/' + ${dto.id}}"><button>編集</button></a>
             </td>
             <td>
-                <form action="#" th:action="@{'/sample/delete/' + ${test.id}}" method="post">
+                <form action="#" th:action="@{'/sample/delete/' + ${dto.id}}" method="post">
                     <button>削除</button>
                 </form>
             </td>
@@ -283,11 +283,11 @@ form.html
 </head>
 <body>
     <h2>入力フォーム</h2>
-    <form method="post" action="#" th:action="@{/sample/form}" th:object="${testForm}">
+    <form method="post" action="#" th:action="@{/sample/form}" th:object="${dto}">
         <label for="name">名前</label>
-        <input type="text" id="name" name="name" th:value="${testForm.name}"><br>
+        <input type="text" id="name" name="name" th:value="${dto.name}"><br>
         <label for="age">年齢</label>
-        <input type="text" id="age" name="age" th:value="${testForm.age}"><br>
+        <input type="text" id="age" name="age" th:value="${dto.age}"><br>
         <input type="submit" value="送信">
     </form>
     <div><a href="#" th:href="@{/sample}">トップページ</a></div>
@@ -305,11 +305,11 @@ edit.html
 </head>
 <body>
     <h2>編集フォーム</h2>
-    <form method="post" action="#" th:action="@{'/sample/edit/' + ${testForm.id}}" th:object="${testForm}">
+    <form method="post" action="#" th:action="@{'/sample/edit/' + ${dto.id}}" th:object="${dto}">
         <label for="name">名前</label>
-        <input type="text" id="name" name="name" th:value="${testForm.name}"><br>
+        <input type="text" id="name" name="name" th:value="${dto.name}"><br>
         <label for="age">年齢</label>
-        <input type="text" id="age" name="age" th:value="${testForm.age}"><br>
+        <input type="text" id="age" name="age" th:value="${dto.age}"><br>
         <input type="submit" value="送信">
     </form>
     <div><a href="#" th:href="@{/sample}">トップページ</a></div>
@@ -331,4 +331,80 @@ check.html
     <div><a href="#" th:href="@{/sample}">トップページ</a></div>
 </body>
 </html>
+```
+
+## 8. Spring BootにControllerを作成する
+1. 「src/main/java/」配下にjp.co.web.controllerパッケージを作成する。
+2. 1で作成したパッケージ配下にUserController.java(クラス)を以下の条件で作成する。  
+  a. UserServiceをDIする  
+  b. Controllerアノテーションを付与する  
+  c. 各画面用のメソッドを作成する
+
+```
+package jp.co.web.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jp.co.web.dto.UserDto;
+import jp.co.web.service.UserService;
+
+@Controller
+@RequestMapping("/sample")
+public class UserController {
+
+  @Autowired
+  private UserService service;
+
+  //一覧画面の表示
+  @GetMapping
+  public String index(Model model) {
+    model.addAttribute("dtoList", service.selectAll());
+    return "sample/index";
+  }
+
+  //新規入力フォームの表示
+  @GetMapping("/form")
+  public String form(@ModelAttribute UserDto dto) {
+    return "sample/form";
+  }
+
+  //新規入力データの保存
+  @PostMapping("/form")
+  public String create(UserDto dto) {
+    service.insertOne(dto);
+    return "redirect:/sample";
+  }
+
+  //編集フォームの表示
+  @GetMapping("/edit/{id}")
+  public String edit(@ModelAttribute UserDto dto, @PathVariable Integer id) {
+    UserDto result = service.selectOne(id);
+    dto.setId(result.getId());
+    dto.setName(result.getName());
+    dto.setAge(result.getAge());
+    return "sample/edit";
+  }
+
+  //編集データの保存
+  @PostMapping("/edit/{id}")
+  public String update(UserDto dto, @PathVariable int id) {
+    dto.setId(id);
+    service.updateOne(dto);
+    return "redirect:/sample";
+  }
+
+  //データの削除
+  @PostMapping("/delete/{id}")
+  public String delete(@PathVariable int id) {
+    service.deleteOne(id);
+    return "redirect:/sample";
+  }
+}
 ```
