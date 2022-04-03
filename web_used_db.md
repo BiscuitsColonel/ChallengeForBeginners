@@ -45,3 +45,5 @@ DBを扱う理由とWebアプリの基本を学ぶ
  - t-userにplayers_tblテーブルとplayers_seqシーケンスへ全ての操作権限を付与する
 
 ## 3. Spring BootにDtoを作成する
+1. 「src/main/java/」配下にjp.co.baseball.dtoパッケージを作成する(パッケージは「/」を「.」と扱う)。
+2. 1で作成したパッケージ配下にPlayersDto.java(クラス)を以下の内容で作成する。
