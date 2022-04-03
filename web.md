@@ -46,7 +46,7 @@ Spring Bootを簡単に扱えるおすすめのIDEは以下。　　
 ```
 
 ## 4. コントローラを作成
-1. 「src/main/java/」配下に**jp.co.helloworl.controller**パッケージを作成する(パッケージは「/」を「.」と扱う)。
+1. 「src/main/java/」配下に**jp.co.helloworld.controller**パッケージを作成する(パッケージは「/」を「.」と扱う)。
 2. 1で作成したパッケージ配下に**SumController.java**(クラス)を以下の内容で作成する。
 
 ```
