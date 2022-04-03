@@ -24,7 +24,7 @@
 2. 以下の条件のテーブルを作成する。  
   a. テーブル名は**user**とする。  
   b. **id**と**name**というカラムを持つ。  
-  c. カラムの型については、idは**integer**、nameは**character varying(10)**とする。  
+  c. カラムの型については、idは**integer**、nameは**character varying(20)**とする。  
   d. idは**プライマリキー**とする。
 
 ## 3. **centos01**からuserテーブルにデータを挿入する(INSERT)
