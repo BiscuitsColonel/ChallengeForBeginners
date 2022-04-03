@@ -2,10 +2,21 @@
 DBを扱う理由とWebアプリの基本を学ぶ
 
 ## 学んでほしいこと
- - DB(RDBMS)
- - 標準SQL
- - 設定ファイル
- - バックアップとリストア
+ - CRUD
+ - Api
+ - Spring Boot
+   - 基本構成
+     - プロパティファイル
+     - Controller
+     - Service
+     - Dto
+     - Log
+     - Mapper
+     - Exception
+   - エラー制御
+   - バリデーション
+ - データベース
+   - アプリとの関係性
 
 ## 前提
  - [データベース初心者向け課題](db.md)と[Webアプリ初心者向け課題](web.md)を行っていること。
