@@ -234,8 +234,9 @@ public class UserService {
 }
 ```
 ## 7. 各画面表示用テンプレートを作成
-1. 「src/main/resources/templates/sample」配下に各画面表示用のHTMLファイルを作成する。
-2. 作成するのは以下の4画面分のファイル
+1. 「src/main/resources/templates/」配下にsampleパッケージを作成する(templates.sampleとなる)。
+2. templates.sample配下に各画面表示用のHTMLファイルを作成する。
+3. 作成するのは以下の4画面分のファイル
  - index.html(一覧画面)
  - form.html(新規作成画面)
  - edit.html(編集画面)
@@ -322,7 +323,7 @@ public class UserService {
 </head>
 <body>
     <h2>指定年齢未満のユーザー数確認</h2>
-    
+    <p th:text="${msg}"></p>
     <div><a href="#" th:href="@{/sample}">トップページ</a></div>
 </body>
 </html>
