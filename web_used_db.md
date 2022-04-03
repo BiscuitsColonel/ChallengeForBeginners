@@ -242,7 +242,8 @@ public class UserService {
  - edit.html(編集画面)
  - check.html(指定年齢未満のユーザー数確認画面)
 
-```index.html
+index.html
+```
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -272,7 +273,8 @@ public class UserService {
 </html>
 ```
 
-```form.html
+form.html
+```
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -293,7 +295,8 @@ public class UserService {
 </html>
 ```
 
-```edit.html
+edit.html
+```
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -314,7 +317,8 @@ public class UserService {
 </html>
 ```
 
-```check.html
+check.html
+```
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
