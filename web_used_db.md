@@ -28,7 +28,7 @@ DBを扱う理由とWebアプリの基本を学ぶ
  - グループ: jp.co.web
  - 成果物: SampleWebApp
  - パッケージ: jp.co.web
- - Spring Boot バージョン: 2.6.4
+ - Spring Boot バージョン: 2.x.x
  - 依存関係: Spring Web, Spring Boot DevTools, Thymeleaf, Lombok, MyBatis Framework, PostgreSQL Driver, Validate
 
 ## 2. データベースを作成
@@ -423,7 +423,7 @@ Spring Bootアプリケーションとして起動し、 http://localhost:8080/s
  - データの編集
  - データの削除
 
-### 予告
+### 追記予定
 このアプリは以下のような問題を抱えているので解決する。
  - データ登録時と編集時に入力データのバリデーションが行えていない
  - DB接続エラーなどのエクセプションが起きた場合などのエラーハンドリングがされていない
