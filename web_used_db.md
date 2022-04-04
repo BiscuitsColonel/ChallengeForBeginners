@@ -10,6 +10,9 @@ DBを扱う理由とWebアプリの基本を学ぶ
      - Service
      - Dto
      - Mapper
+     - Log
+     - Exception
+     - Hundler
    - DI
    - 使用した依存関係について
  - データベース
