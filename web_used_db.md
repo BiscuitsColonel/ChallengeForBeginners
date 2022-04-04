@@ -42,11 +42,11 @@ DBを扱う理由とWebアプリの基本を学ぶ
 ## 3. Spring BootにDtoを作成する
 1. 「src/main/java/」配下にjp.co.web.dtoパッケージを作成する(パッケージは「/」を「.」と扱う)。
 2. 1で作成したパッケージ配下にUserDto.java(クラス)を以下の条件で作成する。  
-  a. ゲッターとセッターはlombokのアノテーションを使用する  
-  b. id(Integer), name(String), age(Integer)を定義する  
-  c. Nullを許可しない  
-  d. ageのみ10~60の値の制約を設ける  
-  e. Componentアノテーションを付与する
+  - ゲッターとセッターはlombokのアノテーションを使用する  
+  - id(Integer), name(String), age(Integer)を定義する  
+  - Nullを許可しない  
+  - ageのみ10~60の値の制約を設ける  
+  - Componentアノテーションを付与する
 
 ```
 package jp.co.web.dto;
@@ -78,13 +78,13 @@ public class UserDto {
 ## 4. Spring BootにMapperを作成する
 1. 「src/main/java/」配下にjp.co.users.repositoryパッケージを作成する。
 2. 1で作成したパッケージ配下にUserMapper.java(クラス)を以下の条件で作成する。  
-  a. インターフェースとする  
-  b. Mapperアノテーションを付与する  
-  c. 全件取得用関数をDtoのリストを戻り値として作成  
-  d. 1件取得用関数をDtoを戻り値として作成  
-  e. ユーザー登録用関数をIntegerを戻り値として作成  
-  f. ユーザー情報更新用関数をIntegerを戻り値として作成 　
-  g. ユーザー情報削除用関数をIntegerを戻り値として作成
+  - インターフェースとする  
+  - Mapperアノテーションを付与する  
+  - 全件取得用関数をDtoのリストを戻り値として作成  
+  - 1件取得用関数をDtoを戻り値として作成  
+  - ユーザー登録用関数をIntegerを戻り値として作成  
+  - ユーザー情報更新用関数をIntegerを戻り値として作成  
+  - ユーザー情報削除用関数をIntegerを戻り値として作成
 
 ```
 package jp.co.web.repository;
@@ -167,9 +167,9 @@ public interface UserMapper {
 ## 6. Spring BootにServiceを作成する
 1. 「src/main/java/」配下にjp.co.web.serviceパッケージを作成する。
 2. 1で作成したパッケージ配下にUserService.java(クラス)を以下の条件で作成する。  
-  a. UserMapperをDIする  
-  b. Serviceアノテーションを付与する  
-  c. Mapperの各関数をそのまま戻り値とするServiceを作成する  
+  - UserMapperをDIする  
+  - Serviceアノテーションを付与する  
+  - Mapperの各関数をそのまま戻り値とするServiceを作成する  
   ※今回の場合はMapperをそのまま使うだけで良いが、本来はServiceを置くことでMapperを返す前に中間処理を加えたりする
 
 ```
@@ -301,9 +301,9 @@ edit.html
 ## 8. Spring BootにControllerを作成する
 1. 「src/main/java/」配下にjp.co.web.controllerパッケージを作成する。
 2. 1で作成したパッケージ配下にUserController.java(クラス)を以下の条件で作成する。  
-  a. UserServiceをDIする  
-  b. Controllerアノテーションを付与する  
-  c. 各画面用のメソッドを作成する
+  - UserServiceをDIする  
+  - Controllerアノテーションを付与する  
+  - 各画面用のメソッドを作成する
 
 ```
 package jp.co.web.controller;
@@ -376,12 +376,12 @@ public class UserController {
 ## 9. Spring Bootのプロパティファイルの設定
 1. application.propertiesをapplication.ymlにリネームする
 2. application.ymlに以下の設定をする。  
-  a. portは8080  
-  b. PostgreSQLの接続情報を環境変数でオーバーライドできる形で記入する  
-  c. アプリ側でコネクションプーリングは使わない  
-  d. SQLのログを取得する  
-  e. Mybatisはキャッシュを利用しない  
-  f. プリペアドを使い回す  
+  - portは8080  
+  - PostgreSQLの接続情報を環境変数でオーバーライドできる形で記入する  
+  - アプリ側でコネクションプーリングは使わない  
+  - SQLのログを取得する  
+  - Mybatisはキャッシュを利用しない  
+  - プリペアドを使い回す  
   ※必要であれば以下のようにSSHトンネリングを行う
   >ssh -i ~/.ssh/id_rsa t-user@32.56.131.4 -L 5432:32.56.131.4:5432
 
