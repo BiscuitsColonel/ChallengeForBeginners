@@ -42,11 +42,11 @@ DBを扱う理由とWebアプリの基本を学ぶ
 ## 3. Spring BootにDtoを作成する
 1. 「src/main/java/」配下にjp.co.web.dtoパッケージを作成する(パッケージは「/」を「.」と扱う)。
 2. 1で作成したパッケージ配下にUserDto.java(クラス)を以下の条件で作成する。  
-  - ゲッターとセッターはlombokのアノテーションを使用する  
-  - id(Integer), name(String), age(Integer)を定義する  
-  - Nullを許可しない  
-  - ageのみ10~60の値の制約を設ける  
-  - Componentアノテーションを付与する
+   - ゲッターとセッターはlombokのアノテーションを使用する  
+   - id(Integer), name(String), age(Integer)を定義する  
+   - Nullを許可しない  
+   - ageのみ10~60の値の制約を設ける  
+   - Componentアノテーションを付与する
 
 ```
 package jp.co.web.dto;
@@ -78,13 +78,13 @@ public class UserDto {
 ## 4. Spring BootにMapperを作成する
 1. 「src/main/java/」配下にjp.co.users.repositoryパッケージを作成する。
 2. 1で作成したパッケージ配下にUserMapper.java(クラス)を以下の条件で作成する。  
-  - インターフェースとする  
-  - Mapperアノテーションを付与する  
-  - 全件取得用関数をDtoのリストを戻り値として作成  
-  - 1件取得用関数をDtoを戻り値として作成  
-  - ユーザー登録用関数をIntegerを戻り値として作成  
-  - ユーザー情報更新用関数をIntegerを戻り値として作成  
-  - ユーザー情報削除用関数をIntegerを戻り値として作成
+   - インターフェースとする  
+   - Mapperアノテーションを付与する  
+   - 全件取得用関数をDtoのリストを戻り値として作成  
+   - 1件取得用関数をDtoを戻り値として作成  
+   - ユーザー登録用関数をIntegerを戻り値として作成  
+   - ユーザー情報更新用関数をIntegerを戻り値として作成  
+   - ユーザー情報削除用関数をIntegerを戻り値として作成
 
 ```
 package jp.co.web.repository;
@@ -376,12 +376,12 @@ public class UserController {
 ## 9. Spring Bootのプロパティファイルの設定
 1. application.propertiesをapplication.ymlにリネームする
 2. application.ymlに以下の設定をする。  
-  - portは8080  
-  - PostgreSQLの接続情報を環境変数でオーバーライドできる形で記入する  
-  - アプリ側でコネクションプーリングは使わない  
-  - SQLのログを取得する  
-  - Mybatisはキャッシュを利用しない  
-  - プリペアドを使い回す  
+   - portは8080  
+   - PostgreSQLの接続情報を環境変数でオーバーライドできる形で記入する  
+   - アプリ側でコネクションプーリングは使わない  
+   - SQLのログを取得する  
+   - Mybatisはキャッシュを利用しない  
+   - プリペアドを使い回す  
   ※必要であれば以下のようにSSHトンネリングを行う
   >ssh -i ~/.ssh/id_rsa t-user@32.56.131.4 -L 5432:32.56.131.4:5432
 
