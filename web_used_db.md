@@ -167,9 +167,9 @@ public interface UserMapper {
 ## 6. Spring BootにServiceを作成する
 1. 「src/main/java/」配下にjp.co.web.serviceパッケージを作成する。
 2. 1で作成したパッケージ配下にUserService.java(クラス)を以下の条件で作成する。  
-  - UserMapperをDIする  
-  - Serviceアノテーションを付与する  
-  - Mapperの各関数をそのまま戻り値とするServiceを作成する  
+   - UserMapperをDIする  
+   - Serviceアノテーションを付与する  
+   - Mapperの各関数をそのまま戻り値とするServiceを作成する  
   ※今回の場合はMapperをそのまま使うだけで良いが、本来はServiceを置くことでMapperを返す前に中間処理を加えたりする
 
 ```
@@ -218,10 +218,10 @@ public class UserService {
 1. 「src/main/resources/templates/」配下にsampleパッケージを作成する(templates.sampleとなる)。
 2. templates.sample配下に各画面表示用のHTMLファイルを作成する。
 3. 作成するのは以下の4画面分のファイル
- - index.html(一覧画面)
- - form.html(新規作成画面)
- - edit.html(編集画面)
- - check.html(指定年齢未満のユーザー数確認画面)
+   - index.html(一覧画面)
+   - form.html(新規作成画面)
+   - edit.html(編集画面)
+   - check.html(指定年齢未満のユーザー数確認画面)
 
 index.html
 ```
@@ -301,9 +301,9 @@ edit.html
 ## 8. Spring BootにControllerを作成する
 1. 「src/main/java/」配下にjp.co.web.controllerパッケージを作成する。
 2. 1で作成したパッケージ配下にUserController.java(クラス)を以下の条件で作成する。  
-  - UserServiceをDIする  
-  - Controllerアノテーションを付与する  
-  - 各画面用のメソッドを作成する
+   - UserServiceをDIする  
+   - Controllerアノテーションを付与する  
+   - 各画面用のメソッドを作成する
 
 ```
 package jp.co.web.controller;
