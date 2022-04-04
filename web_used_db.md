@@ -35,8 +35,8 @@ DBを扱う理由とWebアプリの基本を学ぶ
 以下の要件でデータベースを作成する。  
 ※ここで言うユーザーはデータベースユーザーを指すことに注意してください
  - centos01のデータベースにpostgresユーザーで**web**というデータベースを作成する
- - postgresユーザーでid(int)(プライマリキー), name(text), age(int)のカラムを持つusersテーブルを作成する
- - postgresユーザーでusers_id_seqというシーケンスを作成する
+ - postgresユーザーでid(int)(プライマリキー), name(text), age(int)のカラムを持つ**users**テーブルを作成する
+ - postgresユーザーで**users_id_seq**というシーケンスを作成する
  - t-userにusersテーブルとusers_id_seqシーケンスへ全ての操作権限を付与する
 
 ## 3. Spring BootにDtoを作成する
