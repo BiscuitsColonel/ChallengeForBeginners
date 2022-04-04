@@ -9,11 +9,7 @@ DBを扱う理由とWebアプリの基本を学ぶ
      - Controller
      - Service
      - Dto
-     - Log
      - Mapper
-     - Exception
-   - エラー制御
-   - バリデーション
    - DI
    - 使用した依存関係について
  - データベース
@@ -40,7 +36,8 @@ DBを扱う理由とWebアプリの基本を学ぶ
 ※ここで言うユーザーはデータベースユーザーを指すことに注意してください
  - centos01のデータベースにpostgresユーザーで**web**というデータベースを作成する
  - postgresユーザーでid(int)(プライマリキー), name(text), age(int)のカラムを持つusersテーブルを作成する
- - t-userにusersテーブルへ全ての操作権限を付与する
+ - postgresユーザーでusers_id_seqというシーケンスを作成する
+ - t-userにusersテーブルとusers_id_seqシーケンスへ全ての操作権限を付与する
 
 ## 3. Spring BootにDtoを作成する
 1. 「src/main/java/」配下にjp.co.web.dtoパッケージを作成する(パッケージは「/」を「.」と扱う)。
@@ -116,7 +113,7 @@ public interface UserMapper {
 ## 5. Mapperが使用するSQLファイルを作成する
 1. 「src/main/resource/」配下にjp.co.web.repositoryパッケージを作成する。
 2. 1で作成したパッケージ配下にUserMapper.xml(ファイル)を作成する。 
-3. UserMapper.javaに対応させたいSQLをそれぞれ書く。
+3. UserMapper.javaに対応させたいSQLをそれぞれ書く(insertOneのidはシーケンスを使用する)。
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -144,7 +141,7 @@ public interface UserMapper {
 		INSERT INTO
 			users
 		VALUES (
-			#{id},
+			nextval('users_id_seq'),
 			#{name},
 			#{age}
 		)
@@ -173,8 +170,7 @@ public interface UserMapper {
   a. UserMapperをDIする  
   b. Serviceアノテーションを付与する  
   c. Mapperの各関数をそのまま戻り値とするServiceを作成する  
-  d. 指定年齢未満のユーザーを数えるServiceを作成する  
-  ※cだけだとMapperをそのまま使うだけで良いが、dのようなMapperを加工した処理を表現するためにServiceを作成している
+  ※今回の場合はMapperをそのまま使うだけで良いが、本来はServiceを置くことでMapperを返す前に中間処理を加えたりする
 
 ```
 package jp.co.web.service;
@@ -215,22 +211,6 @@ public class UserService {
   public Integer deleteOne(Integer id) {
 
     return mapper.deleteOne(id);
-  }
-
-  public String checkUnderAgeCount(Integer age) {
-
-    Integer count = 0;
-    List<UserDto> usersInfo = mapper.selectAll();
-
-    for (UserDto p : usersInfo) {
-
-      if (p.getAge() < age) {
-
-        count++;
-      }
-    }
-
-    return age + "歳未満のユーザーが" + count + "人存在します。";
   }
 }
 ```
@@ -318,22 +298,6 @@ edit.html
 </html>
 ```
 
-check.html
-```
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>CRUD Sample</title>
-</head>
-<body>
-    <h2>指定年齢未満のユーザー数確認</h2>
-    <p th:text="${msg}"></p>
-    <div><a href="#" th:href="@{/sample}">トップページ</a></div>
-</body>
-</html>
-```
-
 ## 8. Spring BootにControllerを作成する
 1. 「src/main/java/」配下にjp.co.web.controllerパッケージを作成する。
 2. 1で作成したパッケージ配下にUserController.java(クラス)を以下の条件で作成する。  
@@ -372,7 +336,7 @@ public class UserController {
 
   //新規入力フォームの表示
   @GetMapping("/form")
-  public String form(@ModelAttribute UserDto dto) {
+  public String form(@ModelAttribute("dto") UserDto dto) {
     return "sample/form";
   }
 
@@ -385,7 +349,7 @@ public class UserController {
 
   //編集フォームの表示
   @GetMapping("/edit/{id}")
-  public String edit(@ModelAttribute UserDto dto, @PathVariable Integer id) {
+  public String edit(@ModelAttribute("dto") UserDto dto, @PathVariable Integer id) {
     UserDto result = service.selectOne(id);
     dto.setId(result.getId());
     dto.setName(result.getName());
@@ -449,6 +413,18 @@ mybatis:
   configuration:
     # キャッシュを使わない
     cache-enabled: false
-    # PreparedStatementを使います
+    # PreparedStatementを使います動作
     defaultExecutorType: REUSE
 ```
+## 10.　動作確認
+http://localhost:8080/sample にアクセスしてWebアプリを触ってみる
+ - 画面の遷移
+ - データの登録
+ - データの編集
+ - データの削除
+
+### 予告
+このアプリは以下のような問題を抱えているので解決する。
+ - データ登録時と編集時に入力データのバリデーションが行えていない
+ - DB接続エラーなどのエクセプションが起きた場合などのエラーハンドリングがされていない
+ - ログを見ても処理内容が追えない
