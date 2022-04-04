@@ -14,18 +14,18 @@
 以下の手順を実行する。
 1. PostgreSQL14のリポジトリを追加
 2. 以下のパッケージをインストール  
-  a. postgresql14  
-  b. postgresql14-server
+   - postgresql14  
+   - postgresql14-server
 3. PostgreSQLの起動コマンドをpostgresユーザーで実行
 
 ## 2. centos01からテーブルを作成する(CREATE TABLE)
 以下の手順を実行する。
 1. PostgreSQLのpostgresデータベースに接続する。
 2. 以下の条件のテーブルを作成する。  
-  a. テーブル名は**user**とする。  
-  b. **id**と**name**というカラムを持つ。  
-  c. カラムの型については、idは**integer**、nameは**character varying(20)**とする。  
-  d. idは**プライマリキー**とする。
+   - テーブル名は**user**とする。  
+   - **id**と**name**というカラムを持つ。  
+   - カラムの型については、idは**integer**、nameは**character varying(20)**とする。  
+   - idは**プライマリキー**とする。
 
 ## 3. centos01からuserテーブルにデータを挿入する(INSERT)
 以下のようなデータを挿入する。
@@ -87,7 +87,7 @@ host postgres t-user 0.0.0.0/0 md5
 ## 13. centos02にPostgreSQL14クライアントをインストールする
 1. PostgreSQL14のリポジトリを追加
 2. 以下のパッケージをインストール  
-  a. postgresql14 
+   - postgresql14 
 
 ## 14. centos02からt-userでcentos01内のpostgresデータベースに接続してuserテーブルを参照する
 参照結果が以下のような内容であることを確認する。
