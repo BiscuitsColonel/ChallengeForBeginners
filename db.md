@@ -1,11 +1,11 @@
-# DB初心者向け課題
+# データベース初心者向け課題
 代表的なRDBMSであるPostgreSQLを学んでみる。
 
 ## 学んでほしいこと
- - DB(RDBMS)とは
- - 一般的な運用SQL
+ - DB(RDBMS)
+ - 標準SQL
  - 設定ファイル
- - バックアップ・リストア
+ - バックアップとリストア
 
 ## 前提
  - [Linux初心者向け課題](linux.md)で構築したcentos01とcentos02が存在していること。
@@ -24,7 +24,7 @@
 2. 以下の条件のテーブルを作成する。  
   a. テーブル名は**user**とする。  
   b. **id**と**name**というカラムを持つ。  
-  c. カラムの型については、idは**integer**、nameは**character varying(10)**とする。  
+  c. カラムの型については、idは**integer**、nameは**character varying(20)**とする。  
   d. idは**プライマリキー**とする。
 
 ## 3. **centos01**からuserテーブルにデータを挿入する(INSERT)

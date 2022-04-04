@@ -1,19 +1,22 @@
 # Webアプリ初心者向け課題
-Spring BootでJavaを用いてWebアプリを作ってみる。
+Spring BootでJavaを用いてWebアプリをなんとなく作ってみる。
 
 ## 学んでほしいこと
- - IDEとは
- - Spring Bootとは
- - MVCモデルとは
+ - IDE
+ - Spring Boot
+ - MVCモデル
  - Java 
+ - アノテーション
+ - HTML
+ - 使用した依存関係について
 
 ## 1. IDEのインストール
 Spring Bootを簡単に扱えるおすすめのIDEは以下。　　
  - Eclipse
  - IntelliJ IDEA
 
-## 2. SpringBootの使用
-以下の要件でSpringBootのプロジェクトを作成する。
+## 2. Spring Bootの使用
+以下の要件でSpring Bootのプロジェクトを作成する。
  - Spring スターター・プロジェクトから作成
  - 名前: HelloWorldApp
  - タイプ: Gradle Project
@@ -43,7 +46,7 @@ Spring Bootを簡単に扱えるおすすめのIDEは以下。　　
 ```
 
 ## 4. コントローラを作成
-1. 「src/main/java/」配下に**jp.co.helloworl.controller**パッケージを作成する(パッケージは「/」を「.」と扱う)。
+1. 「src/main/java/」配下に**jp.co.helloworld.controller**パッケージを作成する(パッケージは「/」を「.」と扱う)。
 2. 1で作成したパッケージ配下に**SumController.java**(クラス)を以下の内容で作成する。
 
 ```
