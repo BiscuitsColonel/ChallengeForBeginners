@@ -417,7 +417,7 @@ mybatis:
     defaultExecutorType: REUSE
 ```
 ## 10.　動作確認
-http://localhost:8080/sample にアクセスしてWebアプリを触ってみる
+Spring Bootアプリケーションとして起動し、 http://localhost:8080/sample にアクセスしてWebアプリを触ってみる
  - 画面の遷移
  - データの登録
  - データの編集
