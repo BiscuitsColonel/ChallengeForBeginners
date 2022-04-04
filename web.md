@@ -24,7 +24,7 @@ Spring Bootを簡単に扱えるおすすめのIDEは以下。　　
  - グループ: jp.co.helloworld
  - 成果物: HelloWorldApp
  - パッケージ: jp.co.helloworld
- - Spring Boot バージョン: 2.6.4
+ - Spring Boot バージョン: 2.x.x
  - 依存関係: Spring Web, Spring Boot DevTools, Thymeleaf
 
 ## 3. WebページとしたいHTMLファイルを作成
