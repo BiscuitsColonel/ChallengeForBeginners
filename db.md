@@ -108,7 +108,7 @@ id | name
  - フォーマットは平文のSQLスクリプトファイルとする
  - バックアップファイル名は**test.dump**とする
 
-## 17. centos01からuserテーブルを削除する(DROP TABLE)
+## 17. centos01からmydbデータベースを削除する(DROP DATABASE)
 
 ## 18. centos01からtest.dumpを使用してmydbデータベースをリストアする
 
