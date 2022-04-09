@@ -29,7 +29,7 @@
 2. 以下の条件のテーブルを作成する。  
    - テーブル名は**user_tbl**とする。  
    - **id**と**name**というカラムを持つ。  
-   - カラムの型については、idは**integer**、nameは**character varying(20)**とする。  
+   - カラムの型については、idは **integer** 、nameは **character varying(20)** とする。  
    - idは**プライマリキー**とする。
 
 ## 4. centos01からuser_tblテーブルにデータを挿入する(INSERT)
