@@ -388,8 +388,6 @@ public class UserController {
    - SQLのログを取得する  
    - Mybatisはキャッシュを利用しない  
    - プリペアドを使い回す  
-  ※必要であれば以下のようにSSHトンネリングを行う
-  >ssh -i ~/.ssh/id_rsa t-user@32.56.131.4 -L 5432:32.56.131.4:5432
 
 ```
 # ウェブ
