@@ -417,7 +417,7 @@ mybatis:
   configuration:
     # キャッシュを使わない
     cache-enabled: false
-    # PreparedStatementを使います動作
+    # PreparedStatementを使いまわす
     defaultExecutorType: REUSE
 ```
 ## 10.　動作確認
