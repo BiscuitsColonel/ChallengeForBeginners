@@ -1,5 +1,6 @@
 # Webアプリ初心者向け課題
-Spring BootでJavaを用いてWebアプリをなんとなく作ってみる。
+Spring BootでJavaを用いてWebアプリをなんとなく作ってみる。  
+メモ: https://zenn.dev/angelica/books/52be1e365c61ea
 
 ## 学んでほしいこと
  - IDE
